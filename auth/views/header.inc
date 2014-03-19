@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>PHP Authentication</title>
+    <title>Cooking Lao</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 

@@ -16,7 +16,7 @@ class AuthModel {
             WHERE (userName= :name)
             AND (psswrd= :password); 
         ");
-        if ($stmt->execute(array(':name' => $name, ':password' => $password))) {
+        if ($stmt->execute(array(':name' => $name, ':password' => md5($password)))) {
             $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             if (count($rows) === 1) {
                 return $rows[0];

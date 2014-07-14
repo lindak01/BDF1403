@@ -7,5 +7,13 @@ class AuthView {
         if (file_exists($templatePath)) {
             include $templatePath;
         }
-    }   
+    }
+    
+    public function getTypes(){
+        $sql = "select * from recipeTypes";
+        $st = $this->db->prepare(sql);
+        $st->execute();
+        
+        return $st->fetchAll();
+    }
 }

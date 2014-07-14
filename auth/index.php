@@ -1,7 +1,4 @@
 <?php
-mysql_connect('localhost:8888', 'root', 'root') or
-die(mysql_error());
-mysql_select_db('BDF1403') or die(mysql_error());
 
 require_once "db/db.php";
 require_once "AuthModel.php";
@@ -13,7 +10,7 @@ $view = new AuthView();
 $username = empty($_POST['username']) ? '' : strtolower(trim($_POST['username']));
 $password = empty($_POST['password']) ? '' : trim($_POST['password']);
 
-$contentPage = 'form';
+$contentPage = 'body';
 
 if (!empty($username) && !empty($password)) {
     $user = $model->getUserByNamePass($username, $password);
